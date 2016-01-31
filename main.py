@@ -23,7 +23,8 @@ def read_input():
     the_grid = io.get_grid_info()
     while True:
         the_robot = io.build_robot(the_grid)
-        directions = io.get_directions()
+        directions = io.gen_directions()
+
         sim_robot(the_robot, directions)
         print('{:d} {:d} {:s}'.format(the_robot.x, the_robot.y,
                                       robot.parse_heading(the_robot.heading)), end="")
