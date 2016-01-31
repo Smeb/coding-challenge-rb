@@ -2,7 +2,9 @@ Type input in a sequence
 
 `
 XX XX
+
 XX XX F
+
 D*
 `
 Where XX is a value 0 - 50, F is an orientation N, E, S, W, and D* is a
