@@ -4,6 +4,7 @@ from  mars_program import robot
 
 the_grid = None
 def setup():
+    global the_grid
     the_grid = grid.Grid(10, 10)
 
 def teardown():
@@ -25,13 +26,14 @@ def test_right_loop():
         the_robot.turn_right()
     assert_equals(the_robot._heading, robot.Heading.north)
 
+@with_setup(setup, teardown)
 def test_left_turn():
     """Turning left from north should yield west"""
     the_robot = robot.Robot(the_grid, 0, 0, robot.Heading.north)
     the_robot.turn_left()
     assert_equals(the_robot._heading, robot.Heading.west)
 
-
+@with_setup(setup, teardown)
 def test_right_turn():
     """Turning right from north should yield east"""
     the_robot = robot.Robot(the_grid, 0, 0, robot.Heading.north)
